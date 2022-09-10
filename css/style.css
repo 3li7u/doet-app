@@ -1,0 +1,368 @@
+/* 
+  * Brack points [Bootstrap]
+  * sm: 576px;
+  * md: 768px;
+  * lg: 992px;
+  * xl: 1200px;
+ */
+
+/* Global */
+:root {
+  --primary-color: #0075ff;
+  --dark-color: #777777;
+  --light-color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+  color: var(--dark-color);
+}
+
+p {
+  line-height: 1.6;
+  color: var(--dark-color);
+}
+
+section {
+  padding: 50px 0;
+}
+
+/* Global */
+
+/* Grid Styles */
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+.container .row {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.row .col {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .row .col {
+    width: calc(50% - 25px);
+  }
+}
+
+@media (min-width: 992px) {
+  .row .col {
+    width: calc(25% - 25px);
+  }
+}
+
+/* Grid Styles */
+
+.main-content {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 60px;
+  border-bottom: 1px solid var(--light-color);
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+header h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+main {
+  height: calc(100vh - 110px);
+  overflow: hidden;
+}
+
+/* add task */
+
+
+.add-task .meta h5 {
+  margin: 0 0 15px;
+}
+
+form input {
+  width: 100%;
+  height: 55px;
+  border: none;
+  color: var(--dark-color);
+  font-weight: 300;
+  padding: 0 15px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input::placeholder {
+  color: #aaa;
+  font-weight: 200;
+}
+
+/* add task */
+
+/* tasks */
+.tasks-container {
+  padding: 0;
+}
+
+.tasks-container .meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.tasks-container .meta h5 {
+  margin: 0;
+}
+
+.tasks-container .meta span {
+  color: var(--dark-color);
+}
+
+.tasks-container .meta .categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.tasks-container .meta .categories span {
+  cursor: pointer;
+  font-size: 14px;
+  transition: all .1s;
+  -webkit-transition: all .1s;
+  -moz-transition: all .1s;
+  -ms-transition: all .1s;
+  -o-transition: all .1s;
+}
+
+.tasks-container .meta .categories span.active {
+  border-bottom: 3px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+@media (max-width: 575px) {
+  .tasks-container .meta {
+    flex-wrap: wrap;
+  }
+
+  .tasks-container .meta .categories {
+    order: 3;
+    flex: 100%;
+    margin-top: 10px;
+  }
+}
+
+.tasks {
+  height: calc(100vh - 335px);
+  overflow: auto;
+}
+
+.tasks::-webkit-scrollbar {
+  display: none;
+}
+
+.tasks .task {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.tasks .task.hide {
+  display: none;
+}
+
+.tasks .task.done {
+  opacity: .50;
+}
+
+.tasks .task.done .action i {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tasks .task .text {
+  display: flex;
+  align-items: center;
+}
+
+.tasks .task i {
+  opacity: 0;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-transition: all .15s;
+  -moz-transition: all .15s;
+  -ms-transition: all .15s;
+  -o-transition: all .15s;
+}
+
+.tasks .task:hover i {
+  opacity: 1;
+}
+
+.tasks .task .text i {
+  margin-right: 15px;
+  font-size: 14px;
+  padding: 2px;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  transition: all .15s;
+  -webkit-transition: all .15s;
+  -moz-transition: all .15s;
+  -ms-transition: all .15s;
+  -o-transition: all .15s;
+}
+
+.tasks .task .text i.ckecked {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: rotate(1turn);
+  -webkit-transform: rotate(1turn);
+  -moz-transform: rotate(1turn);
+  -ms-transform: rotate(1turn);
+  -o-transform: rotate(1turn);
+}
+
+.tasks .task .text p {
+  margin: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+.tasks .task .text p.strik-through {
+  text-decoration: line-through;
+}
+
+.tasks .task .action i {
+  font-size: 18px;
+}
+
+.tasks .task .action i:first-child {
+  margin-right: 15px;
+}
+
+.tasks .task form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* tasks */
+
+/* footer  */
+
+footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 200;
+  color: #aaa;
+}
+
+/* footer  */

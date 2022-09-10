@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <header>
+        <div class="container">
+          <h3>Doet</h3>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <section class="add-task">
+            <div class="meta">
+              <h5>Add Task</h5>
+            </div>
+          </section>
+          <section class="tasks-container">
+            <div class="meta">
+              <h5>Tasks Todo</h5>
+              <div class="categories">
+                <span data-cat="all">All Tasks</span>
+                <span data-cat="1">In Progress</span>
+                <span data-cat="0">Completed</span>
+              </div>
+              <span class="task-count">0</span>
+            </div>
+            <div class="tasks"></div>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <p>Don't forget to do your duties to the fullest ;)</p>
+      </footer>
+    </div>
+
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>
