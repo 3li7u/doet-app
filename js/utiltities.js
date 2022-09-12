@@ -16,10 +16,9 @@ export function createAddTaskForm() {
 
 // Create Task
 export function createTask(task) {
-  const tasksContainerEl = document.querySelector('.tasks');
-  const taskEl = createEl({
+  return createEl({
     tagName: 'div',
-    attrs: [{ key: 'class', value: 'task' }],
+    attrs: [{ key: 'class', value: `task ${task.completed ? 'done' : ''}` }, { key: 'data-key', value: task._id }],
     content: [{
       tagName: 'div',
       attrs: [{ key: 'class', value: 'text' }, { key: 'name', value: 'text' }],
@@ -29,7 +28,7 @@ export function createTask(task) {
         content: ''
       }, {
         tagName: 'p',
-        content: task
+        content: task.text,
       }]
     },
     {
@@ -46,7 +45,23 @@ export function createTask(task) {
       }]
     }]
   });
-  tasksContainerEl.prepend(taskEl);
+};
+
+// no tasks
+export function noTasks() {
+  return createEl({
+    tagName: 'div',
+    attrs: [{ key: 'class', value: 'no-tasks' }],
+    content: [{
+      tagName: 'i',
+      attrs: [{ key: 'class', value: 'fas fa-trash-alt' }],
+      content: '',
+    },
+    {
+      tagName: 'p',
+      content: 'There are no tasks'
+    }]
+  });
 };
 
 // Create El Component

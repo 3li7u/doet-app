@@ -254,12 +254,26 @@ form input::placeholder {
 }
 
 .tasks .task.done {
-  opacity: .50;
+  opacity: .5;
 }
 
 .tasks .task.done .action i {
   opacity: 0;
   pointer-events: none;
+}
+
+.tasks .task.done .text p {
+  text-decoration: line-through;
+}
+
+.tasks .task.done .text i {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: rotate(1turn);
+  -webkit-transform: rotate(1turn);
+  -moz-transform: rotate(1turn);
+  -ms-transform: rotate(1turn);
+  -o-transform: rotate(1turn);
 }
 
 .tasks .task .text {
@@ -299,16 +313,6 @@ form input::placeholder {
   -o-transition: all .15s;
 }
 
-.tasks .task .text i.ckecked {
-  background-color: var(--primary-color);
-  color: #fff;
-  transform: rotate(1turn);
-  -webkit-transform: rotate(1turn);
-  -moz-transform: rotate(1turn);
-  -ms-transform: rotate(1turn);
-  -o-transform: rotate(1turn);
-}
-
 .tasks .task .text p {
   margin: 0;
   transition: all 1s;
@@ -316,10 +320,6 @@ form input::placeholder {
   -moz-transition: all 1s;
   -ms-transition: all 1s;
   -o-transition: all 1s;
-}
-
-.tasks .task .text p.strik-through {
-  text-decoration: line-through;
 }
 
 .tasks .task .action i {
@@ -346,6 +346,20 @@ form input::placeholder {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+
+.tasks .no-tasks {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasks .no-tasks i {
+  font-size: 2.5rem;
+  color: var(--dark-color);
+  opacity: .5;
 }
 
 /* tasks */
